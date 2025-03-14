@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication1.Models
 {
@@ -15,5 +16,8 @@ namespace WebApplication1.Models
         public string Modalidad { get; set; }
         public string Enlace { get; set; }
         public string RutaImagen { get; set; }
+        
+        [DefaultValue(false)]
+        public bool? Estado { get; set; } = false;
     }
 }

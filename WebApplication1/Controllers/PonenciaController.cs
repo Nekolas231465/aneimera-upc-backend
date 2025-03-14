@@ -91,6 +91,22 @@ namespace WebApplication1.Controllers
             }
             
         }
+        
+        [HttpPatch]
+        [Route("updateStatus/{id:int}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<ActionResult> UpdateStatus(int id)
+        {
+            try
+            {
+                await _ponenciaService.ToggleStatus(id);
+                return StatusCode(StatusCodes.Status200OK, new { mensaje = "Se actualizo correctamente" });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status400BadRequest, new { mensaje = ex.Message });
+            }
+        }
 
         [HttpDelete]
         [Route("delete/{id:int}")]

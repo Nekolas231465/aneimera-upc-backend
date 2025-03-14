@@ -44,9 +44,9 @@ namespace WebApplication1.Controllers
         [HttpPost]
         [Route("create")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        public async Task<ActionResult> Create([FromForm] Taller taller, IFormFile file)
+        public async Task<ActionResult> Create([FromForm] Taller taller, IFormFile file, IFormFile fileExpositor)
         {
-            if (file == null || file.Length == 0)
+            if (file == null || file.Length == 0 || fileExpositor == null || fileExpositor.Length == 0)
             {
                 return StatusCode(StatusCodes.Status400BadRequest, new { mensaje = "Error al enviar archivo." });
             }
@@ -55,14 +55,17 @@ namespace WebApplication1.Controllers
             {
                 string uniqueFileName = Guid.NewGuid().ToString() + "_" + file.FileName;
                 string fileUrl = Url.Content("~/Uploads/" + uniqueFileName);
-                await _tallerService.Create(taller, file, uniqueFileName, fileUrl);
+
+                string uniqueExpositorFileName = Guid.NewGuid().ToString() + "_" + fileExpositor.FileName;
+                string expositorFileUrl = Url.Content("~/Uploads/" + uniqueExpositorFileName);
+
+                await _tallerService.Create(taller, file, uniqueFileName, fileUrl, fileExpositor, uniqueExpositorFileName, expositorFileUrl);
                 return StatusCode(StatusCodes.Status200OK, new { mensaje = "Se creo correctamente" });
             }
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status400BadRequest, new { mensaje = ex.Message });
             }
-
         }
 
         [HttpPut]
@@ -80,6 +83,22 @@ namespace WebApplication1.Controllers
                 return StatusCode(StatusCodes.Status400BadRequest, new { mensaje = ex.Message });
             }
 
+        }
+        
+        [HttpPatch]
+        [Route("updateStatus/{id:int}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<ActionResult> UpdateStatus(int id)
+        {
+            try
+            {
+                await _tallerService.ToggleStatus(id);
+                return StatusCode(StatusCodes.Status200OK, new { mensaje = "Se actualizo correctamente" });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status400BadRequest, new { mensaje = ex.Message });
+            }
         }
 
         [HttpDelete]

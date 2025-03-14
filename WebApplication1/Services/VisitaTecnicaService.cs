@@ -46,10 +46,20 @@ namespace WebApplication1.Services
             _context.VisitaTecnicas.Remove(visitaTecnica);
             await _context.SaveChangesAsync();
         }
+        
+        public async Task ToggleStatus(int id)
+        {
+            VisitaTecnica ponencia = await _context.VisitaTecnicas.FindAsync(id);
+            if (ponencia != null)
+            {
+                ponencia.Estado = !ponencia.Estado;
+                await _context.SaveChangesAsync();
+            }
+        }
 
         public async Task<List<VisitaTecnica>> GetAll()
         {
-            return await _context.VisitaTecnicas.ToListAsync();
+            return await _context.VisitaTecnicas.Where(t => t.Estado == true).ToListAsync();
         }
 
         public async Task<VisitaTecnica> GetById(int id)

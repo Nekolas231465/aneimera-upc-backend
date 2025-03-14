@@ -8136,11 +8136,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\UniversidadUPC-Trabajos\\CAS-UPC\\aneimera-platform-backend\\Aneimer_Backend\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\ProgrammingPractice\\TypescriptPractice\\aneimera-upc-backend\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\UniversidadUPC-Trabajos\\CAS-UPC\\aneimera-platform-backend\\Aneimer_Backend\\WebApplication1\\WebApplication1.csproj",
+      "projectPath": "C:\\ProgrammingPractice\\TypescriptPractice\\aneimera-upc-backend\\WebApplication1\\WebApplication1.csproj",
       "packagesPath": "C:\\Users\\nicol\\.nuget\\packages\\",
-      "outputPath": "C:\\UniversidadUPC-Trabajos\\CAS-UPC\\aneimera-platform-backend\\Aneimer_Backend\\WebApplication1\\obj\\",
+      "outputPath": "C:\\ProgrammingPractice\\TypescriptPractice\\aneimera-upc-backend\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nicol\\AppData\\Roaming\\NuGet\\NuGet.Config"

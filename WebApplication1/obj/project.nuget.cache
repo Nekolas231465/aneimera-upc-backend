@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oNufW9ws1EBq1d1BG2Uu93UK09GHlDJVZn1PdDQ7PkTWYtpFQLMv/xcvlbkJKwm2zV7BmHfZxJHrNXYQngQ+nQ==",
+  "dgSpecHash": "n4d/WDi5iIednss+d+eVgrWNAZZ/AeDJ3UWsvxNGq1u60t8FfbpKDux+FR/314LfeuhrWvIEZO3MVlz7ZgWM3w==",
   "success": true,
-  "projectFilePath": "C:\\UniversidadUPC-Trabajos\\CAS-UPC\\aneimera-platform-backend\\Aneimer_Backend\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "C:\\ProgrammingPractice\\TypescriptPractice\\aneimera-upc-backend\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nicol\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\nicol\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

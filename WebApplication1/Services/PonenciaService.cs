@@ -48,10 +48,20 @@ namespace WebApplication1.Services
             await _context.SaveChangesAsync();
         }
 
+        public async Task ToggleStatus(int id)
+        {
+            Ponencia ponencia = await _context.Ponencias.FindAsync(id);
+            if (ponencia != null)
+            {
+                ponencia.Estado = !ponencia.Estado;
+                await _context.SaveChangesAsync();
+            }
+        }
+
         public async Task<List<Ponencia>> GetAll()
         {
-            return await _context.Ponencias.ToListAsync();
-        }
+            return await _context.Ponencias.Where(p => p.Estado == true).ToListAsync();
+        }   
 
         public async Task<Ponencia> GetById(int id)
         {

@@ -9,5 +9,6 @@ namespace WebApplication1.Services
         Task Create(VisitaTecnica visitaTecnica, IFormFile file, string uniqueFileName, string ruta);
         Task Update(VisitaTecnica visitaTecnica);
         Task Delete(int id);
+        Task ToggleStatus(int id);
     }
 }

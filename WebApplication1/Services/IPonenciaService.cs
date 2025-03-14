@@ -10,5 +10,6 @@ namespace WebApplication1.Services
         Task Create(Ponencia ponencia, IFormFile file, string uniqueFileName, string ruta);
         Task Update(Ponencia ponencia);
         Task Delete(int id);
+        Task ToggleStatus(int id);
     }
 }

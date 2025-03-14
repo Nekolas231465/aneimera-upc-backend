@@ -53,6 +53,7 @@ namespace WebApplication1.Services
             evento.Fecha = objeto.Fecha;
             evento.Hora = objeto.Hora;
             evento.RutaImagen = objeto.RutaImagen;
+            evento.Estado = objeto.Estado;
             if (HasProperty(objeto, "VisitaTecninaId")) evento.VisitaTecninaId = objeto.VisitaTecninaId;
             if (HasProperty(objeto, "TallerId")) evento.TallerId = objeto.TallerId;
             if (HasProperty(objeto, "PonenciaId")) evento.PonenciaId = objeto.PonenciaId;

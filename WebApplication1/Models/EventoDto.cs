@@ -13,5 +13,7 @@
         public int? VisitaTecninaId { get; set; }
         public int? TallerId { get; set; }
         public int? PonenciaId { get; set; }
+        
+        public bool Estado { get; set; }
     }
 }
